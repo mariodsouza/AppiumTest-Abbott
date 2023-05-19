@@ -10,3 +10,6 @@ Steps:
 9. The app should launch on the device and automation test will run
 10. After the run, test-output folder will be created in the project directory.
 11. To view the test report, right-click on emailable-report.html file inside test-output folder and select Open With -> Web Browser
+
+
+Python script is also available in the project folder. File name is test1.py
