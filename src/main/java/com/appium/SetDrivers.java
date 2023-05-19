@@ -4,16 +4,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 public class SetDrivers extends TestBase{
 
-		public WebDriver setAndroidDriver(String DeviceName) throws InterruptedException, IOException {
+		public AppiumDriver<MobileElement> setAndroidDriver(String DeviceName) throws InterruptedException, IOException {
 	        {
 
 	            DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -35,6 +35,10 @@ public class SetDrivers extends TestBase{
 		
 		
 		//method for setting iOSDriver, etc
+		public AppiumDriver<MobileElement> setiOSDriver(String DeviceName) throws InterruptedException, IOException {
+			return null;
+			
+		}
 
 
 

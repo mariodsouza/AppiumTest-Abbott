@@ -15,8 +15,8 @@ public class TestBase {
 
 	public static AppiumDriver<MobileElement> driver;
 	public static String DeviceName = ReadProperties.getProperty("deviceName");
+	public static String PlatformName = ReadProperties.getProperty("platformName");
 
-	@SuppressWarnings("unchecked")
 	@BeforeSuite(alwaysRun = true)
 	public void Setup() throws IOException, InterruptedException {
 

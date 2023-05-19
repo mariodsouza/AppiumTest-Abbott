@@ -17,7 +17,7 @@ import io.appium.java_client.MobileBy;
 
 public class SmokeTest extends TestBase {
 	
-	@Test (description = "Test case to add products to cart and checkout")
+	@Test (description = "Test case to add products to cart and checkout", groups = "Smoke", priority = 1)
 	public void Test1() {
 		
 		SoftAssert sa = new SoftAssert();
@@ -28,7 +28,7 @@ public class SmokeTest extends TestBase {
 		String productName1 = "PG 3"; //Name of the first product
 		String productName2 = "Nike SFB Jungle"; //Name of the second product
 		
-		HomeScreen homeScreen = new HomeScreen(driver);
+		HomeScreen homeScreen = new HomeScreen(driver); //create object of HomeScreen
 		
 		System.out.println("You are on screen: " + homeScreen.title.getText());
 		
@@ -75,7 +75,7 @@ public class SmokeTest extends TestBase {
 		//click on cart button
 		productScreen.cartBtn.click();
 		
-		CartScreen cartScreen = new CartScreen(driver);
+		CartScreen cartScreen = new CartScreen(driver); //create object of CartScreen
 		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(cartScreen.title)));
 		System.out.println("You are on screen: " + cartScreen.title.getText());
 		
@@ -92,23 +92,23 @@ public class SmokeTest extends TestBase {
 		
 		cartScreen.visitWebsiteBtn.click(); //click on Visit website button
 		
-		WebsiteScreen websiteScreen = new WebsiteScreen(driver);
+		WebsiteScreen websiteScreen = new WebsiteScreen(driver); //create object of WebsiteScreen
 		
 		websiteScreen.searchBox.sendKeys("General Store"); //enter text in the search box
 		
-		driver.navigate().back();
+		driver.navigate().back(); //navigate back to Home page
 		
 		sa.assertEquals(homeScreen.title.getText(), "General Store", "Home screen is not displayed"); //verify Home screen is displayed
 		
-		sa.assertAll();
+		sa.assertAll(); //verify all the assertions
 	}
 	
+	//helper method for getting the product price in float type
 	public float productPrice(String price) {
 		String noSpaceStr = price.replaceAll("\\s", "");
 		float value = Float.parseFloat(noSpaceStr.replace("$", "0"));
 		return value;
 	}
-	
 	
 	
 }
