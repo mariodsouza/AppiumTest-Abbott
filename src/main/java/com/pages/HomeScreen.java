@@ -2,21 +2,22 @@ package com.pages;
 
 import org.openqa.selenium.support.PageFactory;
 
+import com.appium.TestBase;
 import com.utilities.ReadProperties;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class HomeScreen {
+public class HomeScreen extends TestBase{
 	
 	String country = ReadProperties.getProperty("country");
 	String countryUIAutomator = "new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + country + "\"))";
 	String id = "";
 	
-	public HomeScreen(AndroidDriver<MobileElement> driver) {
+	public HomeScreen(AppiumDriver<MobileElement> driver) {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	

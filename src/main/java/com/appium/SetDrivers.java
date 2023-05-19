@@ -7,15 +7,11 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class SetDrivers {
-	
-	public static AppiumDriver<MobileElement> driver;
-
+public class SetDrivers extends TestBase{
 
 		public WebDriver setAndroidDriver(String DeviceName) throws InterruptedException, IOException {
 	        {
@@ -36,10 +32,10 @@ public class SetDrivers {
 	            return driver;
 	        }
 	    }
+		
+		
+		//method for setting iOSDriver, etc
 
 
-    
-	
-	
 
 }
